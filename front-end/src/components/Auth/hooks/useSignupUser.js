@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import axios from 'axios'
 import { UserContext, UIContext } from '../../../App'
 import { useHistory } from 'react-router-dom'
-import { fetchCurrentUser } from '../../../services/AuthService'
+import { fetchCurrentUser } from '../../../services/AuthService.js'
 
 const url = process.env.REACT_APP_ENDPOINT
 

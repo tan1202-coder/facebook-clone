@@ -1,0 +1,52 @@
+.input-cg {
+  position: relative;
+  display: block;
+  align-items: center;
+  background: $gray-color-2;
+  padding: $input-default-padding;
+  border-radius: $border-radius-4;
+  overflow: hidden;
+  width: 75%;
+  margin: $input-default-margin;
+  
+  label {
+    position: absolute;
+    left: 0;
+    display: block;
+    padding: $label-default-padding;
+    top: 0;
+    @extend %ease;
+    font-weight: $font-w-semi-bold;
+    font-size: $font-s-regular;
+    transform: translateY(0);
+  }
+
+  input {
+    font-size: $font-s-regular;
+    display: block;
+    margin-top: 0.75em;
+    width: 100%;
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform : translateY(-0.5em);
+      font-size: $font-s-xsmall;
+      color: $primary-light-color;
+    }
+  }
+}
+
+.input-placeholder {
+  display: flex;
+  align-items: center;
+  background: $secondary-light-color;
+  border-radius: $border-radius-5;
+  padding: $input-placeholder-padding;
+  @extend %ease;
+
+  input {
+    width: 100%;
+    font-size: $font-s-medium;
+    @extend %ease;
+  }
+}

@@ -1,0 +1,15 @@
+/**
+* @desc         form styles.
+* @requires     variables.scss, mixins.scss, 
+*/
+
+.form-cg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-4;
+    box-shadow: $box-shadow-medium;
+    width: 400px;
+    height: 300px;
+}

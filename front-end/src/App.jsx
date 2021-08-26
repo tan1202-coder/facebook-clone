@@ -4,16 +4,14 @@ import {UIReducer, initialUIState} from './context/UIContext'
 import {PostReducer, initialPostState} from './context/PostContext'
 import {UserReducer, initialUserState} from './context/UserContext'
 import {ChatReducer, initialChatState} from './context/ChatContext'
-import Loading from './components/Loading'
 import Header from './components/Nav/Header'
 import jwtDecode from 'jwt-decode'
 import  {fetchCurrentUser}  from './services/AuthService'
 import io from 'socket.io-client'
 import ProtectedRoute from './utils/ProtectedRoute'
-import Nav from './components/Nav/Nav';
+import './styles/main.scss'
+
 const Home = lazy(() => import('./screens/Home'))
-const LeftSide = lazy(() => import('./components/Nav/LeftSide'))
-const RightSide = lazy(() => import('./components/Nav/RightSide'))
 const Auth = lazy(() => import('./screens/Auth'));
 
 
@@ -170,7 +168,7 @@ function App() {
             <ChatContext.Provider value = {{chatState, chatDispatch}}>
                 <Fragment>
                   <BrowserRouter>
-                  {userState.isLoggedIn && <Nav />}
+                  {userState.isLoggedIn && <Header/>}
 
                   <Suspense fallback={null}>
                     {loading ? null :
@@ -181,7 +179,7 @@ function App() {
                         path="/"
                         render={(props) =>
                           !userState.isLoggedIn ? (
-                            <Auth />
+                            <Auth/>
                           ) : (
                             <Redirect to="/home"/>
                           )

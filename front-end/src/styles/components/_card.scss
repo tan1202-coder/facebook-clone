@@ -1,0 +1,39 @@
+/**
+* @desc         card styles.
+* @requires     variables.scss
+*/
+
+.card-cg {
+    display: flex;
+    flex-direction: column;
+    max-height: $card-h-max;
+    width: $header-side-width;
+    padding: $card-default-padding;
+    background: $white-color-1;
+    border-radius: .5em;
+    @extend %ease;
+
+    li {
+        padding: $card-default-padding;
+        border-radius: $border-radius-4;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .item-body {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0.75em;
+            color: black;
+
+            span:first-child {
+                font-size: 1.25em;
+                font-weight: $font-w-semi-bold;
+            }
+        }
+
+        &:hover {
+            background: $secondary-hover-color;
+        }
+    }
+}

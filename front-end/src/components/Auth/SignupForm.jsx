@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import useSignupUser from './hooks/useSignupUser'
-import './styles.scss'
+
 
 function SignupForm() {
 
@@ -15,24 +15,24 @@ function SignupForm() {
 
     return (
         <Fragment>
-            <form onSubmit={handleSignupUser} className='form-field'>
-                <div className="form-control">
-                    <input placeholder=' ' id="name" className="form-input" type="text" onChange={handleNameChange} required />
-                    <label htmlFor="name" className="form-label">
+            <form onSubmit={handleSignupUser} className='form-cg'>
+                <div className="input-cg">
+                    <input placeholder=' ' id="name" type="text" onChange={handleNameChange} required />
+                    <label htmlFor="name" className="label">
                         <span>
                             Your name
                         </span>
                     </label>
                 </div>
-                <div className="form-control">
-                    <input placeholder=' ' id="email" className="form-input" type="email" onChange={handleEmailChange} required />
+                <div className="input-cg">
+                    <input placeholder=' ' id="email" type="email" onChange={handleEmailChange} required />
                     <label htmlFor="email" className="form-label">
                         <span>
                             Email Address
                         </span>
                     </label>
                 </div>
-                <div className="form-control">
+                <div className="input-cg">
                     <input placeholder=' ' id="password" className="form-input" type="password" onChange={handlePasswordChange} required />
                     <label htmlFor="password" className="form-label">
                         <span>
@@ -41,7 +41,7 @@ function SignupForm() {
                     </label>
                 </div>
                 
-                    <button type="submit" className='submit-button'>
+                    <button type="submit" className='btn medium white outline'>
                         {loading ? 'Loading...' : 'Sign up'}
                     </button>
             </form>

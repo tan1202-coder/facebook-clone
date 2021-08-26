@@ -1,0 +1,24 @@
+/* we are using reset ruls of bootstrap,
+if you need anything override it here 
+or add new */
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.link, .navlink {
+  text-decoration: none;
+  appearance: none;
+}
+
+input {
+    background: $transparent-color;
+    appearance: none;
+    border: none;
+    outline: none;
+}

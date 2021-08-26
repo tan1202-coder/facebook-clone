@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
-
+import React, {useState, useContext} from 'react'
+import {NavLink} from 'react-router-dom'
+import {UserContext} from '../../App'
+import '../styles/RightSide.scss'
 
 function RightSide() {
     const [friends, setFriends] = useState([{avatar: 'logo192.png', name: 'Nguyễn Văn Hiếu'},{avatar: 'logo192.png', name: 'Nguyễn Văn Chê'}]);
@@ -7,46 +9,48 @@ function RightSide() {
     return (
         <div className = "right-side">
             <div className = 'wrapper'>
-                <div className="right-header">
-                    <span>
+                <div className="header">
+                    <span className = 'header__left'>
                         Active friends
                     </span>
                     <div className="right">
-                        <div className="call">
+                        <div className="right__item">
                             <i class="fas fa-video"></i>
                         </div>
-                        <div className="search">
+                        <div className="right__item">
                             <i class="fas fa-search"></i>
                         </div>
-                        <div className="more">
+                        <div className="right__item">
                             <i class="fas fa-ellipsis-h"></i>
                         </div>
                     </div>
                 </div>
-                <div className="friends">
-                    <ul>
+                
+                    <ul className="body">
                         {friends.map((friend, index) => (
-                            <li key = {index} className="friend active">
-                                <img src={friend.avatar} alt="" />
-                                <span>
-                                    {friend.name}
-                                </span>
-                            </li>
+                            <NavLink to= "#" className = 'nav-link'>
+                                <li key = {index} className="body__item body__item--active">
+                                    <img src={friend.avatar} alt="" />
+                                    <span>
+                                        {friend.name}
+                                    </span>
+                                </li>
+                            </NavLink>
                         ))}
                     </ul>
-                </div>
+                
             </div>
             <div className = 'wrapper'>
-                <div className="right-header">
-                    <span>
+                <div className="header">
+                    <span className = 'header__left'>
                         Groups
                     </span>
                     
                 </div>
-                <div className="friends">
-                    <ul>
+          
+                    <ul className = 'body'>
                         {friends.map((friend, index) => (
-                            <li key={index} className="friend">
+                            <li key={index} className="body__item">
                                 <img src={friend.avatar} alt="" />
                                 <span>
                                     {friend.name}
@@ -54,7 +58,7 @@ function RightSide() {
                             </li>
                         ))}
                     </ul>
-                </div>
+                
             </div>
         </div>
     )

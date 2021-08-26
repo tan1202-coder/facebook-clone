@@ -1,0 +1,30 @@
+.avatar-cg {
+    border-radius: $border-radius-circle;
+    object-fit: cover;
+    object-position: center;
+
+    &.xsmall {
+        height: $avatar-s-xsmall;
+        width: $avatar-s-xsmall;
+    }
+
+    &.small{
+        height: $avatar-s-small;
+        width: $avatar-s-small;
+    }
+
+    &.normal {
+        height: $avatar-s-normal;
+        width: $avatar-s-normal;
+    }
+
+    &.large {
+        height: $avatar-s-large;
+        width: $avatar-s-large;
+    }
+
+    &.xlarge {
+        height: $avatar-s-xlarge;
+        width: $avatar-s-xlarge;
+    }
+}

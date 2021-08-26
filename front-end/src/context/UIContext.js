@@ -1,4 +1,5 @@
 export const initialUIState = {
+    selectingPage: 'home',
     postModel: false,
     message: null,
     notifications: [],
@@ -7,6 +8,12 @@ export const initialUIState = {
 
 export const UIReducer = (state, action) => {
     switch (action.type) {
+        case 'SET_SELECTING_PAGE':
+            return {
+                ...state,
+                selectingPage: action.payload,
+            }
+
         case 'SET_MESSAGE':
             return {
                 ...state,

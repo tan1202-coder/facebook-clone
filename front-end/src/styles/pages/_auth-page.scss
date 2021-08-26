@@ -1,0 +1,24 @@
+.auth {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        background:linear-gradient(to right, rgb(0, 38, 255), white);
+    }
+
+    &__container {
+        
+        & > button {
+            position: absolute;
+            top: 50%;
+            right: 1em;
+        }
+    }
+}

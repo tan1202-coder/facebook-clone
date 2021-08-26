@@ -1,0 +1,101 @@
+/**
+* @desc         button variants.
+* @requires     variables.scss
+*/
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: $button-default-padding;
+  border-radius: $border-radius-4;
+  cursor: pointer;
+  @extend %ease;
+
+//color
+
+  &.white {
+    color: $primary-light-color;
+    background: $white-color-1;
+    border-color: $primary-light-color;
+
+    &:hover, &.active {
+      border-color: $primary-light-color;
+      background: $primary-hover-color;
+      color: $white-color-1;
+      box-shadow: $box-shadow-medium;
+    }
+  }
+
+  &.red {
+    color: $primary-dark-color;
+    
+    &:hover {
+      color: $danger-dark-color;
+    }
+  }
+
+  &.secondary {
+    color: black;
+    background: $secondary-light-color;
+
+    &:hover, &.active {
+      color: $primary-light-color;
+      background: $secondary-dark-color;
+      box-shadow: $box-shadow-medium;
+    }
+  }
+
+// outline
+
+  &.outline {
+      border: 2px solid $primary-light-color;
+  }
+
+  // sizes
+
+  &.medium {
+    width: 150px;
+  }
+
+  &.circle {
+    border-radius: $border-radius-circle;
+  }
+
+}
+
+.btn-nav {
+  padding: $button-nav-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-4;
+  position: relative;
+  font-size: 1.25em;
+  margin: 0 .25em;
+  @extend %ease;
+
+  &:after {
+    @extend %nav-underline;
+  }
+
+  &.white-secondary {
+    color: $secondary-dark-color;
+    background: $white-color-1;
+
+    &:hover {
+      color: $primary-light-color;
+      background: $secondary-hover-color;
+      box-shadow: $box-shadow-medium;
+    }
+  }
+
+  &.active {
+    color: $primary-light-color;
+
+    &:after {
+      @extend %nav-underline--active;
+    }
+  }
+}
+
+

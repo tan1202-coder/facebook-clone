@@ -2,7 +2,10 @@ import React, { useContext, useState } from 'react'
 import { UserContext, UIContext } from '../App'
 import { LogoutUser } from '../services/AuthService'
 import { Link, useHistory } from 'react-router-dom'
-import './styles/Home.scss'
+import NotificationFloating from '../components/Notification/NotificationFloating'
+import CameraField from '../components/Post/PostForm/PostDialog/CameraField'
+import FeelingsCard from '../components/Post/PostForm/PostDialog/FeelingsCard'
+import LocationField from '../components/Post/PostForm/PostDialog/LocationField'
 
 function Home() {
     const history = useHistory()
@@ -40,26 +43,9 @@ function Home() {
             <button onClick = {handleUserLogout}>
                 Log out
             </button>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
-            <h1>test</h1>
+            <CameraField/>
+            <FeelingsCard/>
+            <LocationField/>
         </div>
     )
 }

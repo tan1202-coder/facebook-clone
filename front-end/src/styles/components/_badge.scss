@@ -1,0 +1,15 @@
+.badge-cg {
+    width: $badge-default-size;
+    height: $badge-default-size;
+    border-radius: $border-radius-circle;
+    color: $white-color-1;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    right: 0;
+    background: $badge-bg;
+    font-size: $font-s-xsmall;
+    font-weight: $font-w-semi-bold
+}
