@@ -25,7 +25,7 @@
     }
 }
 
-.feelings-card, .location-field {
+.feelings-card, .location-field, .tag-user {
     form {
         height: 100%;
         width: 100%;
@@ -41,6 +41,23 @@
 
         .btn {
             margin-left: .75em;
+        }
+    }
+}
+
+.tag-user {
+    &.card-cg {
+
+        .search-friends__body {
+            width: 100%;
+            ul {
+               display: flex;
+               margin-bottom: .5em;
+                li {
+                    width: 100%;
+                    
+                }
+            }
         }
     }
 }

@@ -5,9 +5,9 @@ function PreviewImage({previewImage, removeFileImage}) {
         <div className = 'preview-image'>
             <div className = 'preview-image__img'>
                 <img src={previewImage} alt="" />
-            </div>
-            <div className = 'btn red circle'>
-                <i className = 'fas fa-times'></i>
+                <div className = 'btn red circle' onClick = {removeFileImage}>
+                    <i className = 'fas fa-times'></i>
+                </div>
             </div>
         </div>
     )

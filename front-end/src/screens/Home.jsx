@@ -6,6 +6,8 @@ import NotificationFloating from '../components/Notification/NotificationFloatin
 import CameraField from '../components/Post/PostForm/PostDialog/CameraField'
 import FeelingsCard from '../components/Post/PostForm/PostDialog/FeelingsCard'
 import LocationField from '../components/Post/PostForm/PostDialog/LocationField'
+import TagUserCard from '../components/Post/PostForm/PostDialog/TagUserCard'
+
 
 function Home() {
     const history = useHistory()
@@ -46,6 +48,7 @@ function Home() {
             <CameraField/>
             <FeelingsCard/>
             <LocationField/>
+            <TagUserCard/>
         </div>
     )
 }

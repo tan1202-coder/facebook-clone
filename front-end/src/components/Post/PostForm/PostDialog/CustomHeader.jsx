@@ -6,7 +6,7 @@ function CustomHeader({userState, body}) {
     }
     
     return (
-        <div>
+        <span>
             <b>{userState.currentUser.name}</b>
             {body.feelings ? (
                 <>
@@ -33,7 +33,7 @@ function CustomHeader({userState, body}) {
                 <b>{new Date(body.date).toLocaleDateString()}</b>
                 </>
             ) : null}
-        </div>
+        </span>
     )
 }
 
