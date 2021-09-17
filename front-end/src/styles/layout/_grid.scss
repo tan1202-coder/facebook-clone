@@ -1,0 +1,11 @@
+.grid {
+    display: grid;
+    gap: .5em;
+    width: 555px;
+    padding: 0;
+    margin: 0;
+
+    &.two-column {
+        grid-template-columns: 50% 50%;
+    }
+}

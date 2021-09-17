@@ -10,6 +10,8 @@ import  {fetchCurrentUser}  from './services/AuthService'
 import io from 'socket.io-client'
 import ProtectedRoute from './utils/ProtectedRoute'
 import './styles/main.scss'
+import Profile from './screens/Profile';
+import Friends from './screens/Friends';
 
 const Home = lazy(() => import('./screens/Home'))
 const Auth = lazy(() => import('./screens/Auth'));
@@ -188,6 +190,21 @@ function App() {
 
                       <ProtectedRoute 
                         exact path="/home" component={Home} isLoggedIn = {userState.isLoggedIn}/>
+
+                      <ProtectedRoute
+                            exact
+                            path="/profile/:userId"
+                            component={Profile}
+                            isLoggedIn={userState.isLoggedIn}
+                        />
+
+                      <ProtectedRoute
+                            exact
+                            path="/friends"
+                            component={Friends}
+                            isLoggedIn={userState.isLoggedIn}
+                      />
+
                       </Switch>)}
                   
                    </Suspense>

@@ -9,7 +9,7 @@ function FileField({fileRef}) {
 
     return (
         <Fragment>
-            <div className="btn white circle" onClick = {handleImageClick}>
+            <div className="btn-icon btn-icon-default" onClick = {handleImageClick}>
                 <i className = 'fas fa-file-image'></i>
             </div>
         </Fragment>

@@ -1,10 +1,12 @@
 import React, {useState, Fragment} from 'react'
 import Dialog from '../../../UI/Dialog';
 
-function FeelingsCard({body, setBody}) {
+function LocationField({body, setBody}) {
     const [open, setOpen] = useState(false);
+    const [location, setLocation] = useState('');
 
     const handleCloseLocationField = () => {
+        setBody({...body, at: location});
         setOpen(false);
     }
 
@@ -13,16 +15,31 @@ function FeelingsCard({body, setBody}) {
     }
 
     const handleOnChange = (event) => {
-        setBody({...body, at: event.target.value});
+        setLocation(event.target.value);
     }
-        
 
-    const Content = () => {
+     
+    return (
+        <Fragment>
+            <div className="btn-icon btn-icon-default" onClick = {handleOpenLocationField}>
+                <i class="far fa-map"></i>
+            </div>
+            <Dialog isOpen = {open}
+                title = 'Add your Places'
+                onClose = {handleCloseLocationField}
+                content = {<Content body = {body} setBody = {setBody} handleCloseLocationField = {handleCloseLocationField} handleOnChange = {handleOnChange}/>}/>
+        </Fragment>
+    )
+}
+
+
+const Content = ({handleCloseLocationField, handleOnChange}) => {
+
         return (
-            <div className = 'location-field'>
+            <Fragment>
                 <form onSubmit={handleCloseLocationField}>
                     <div className="input-cg">
-                        <input placeholder = ' ' id = "location" type="text" onChange = {handleOnChange} required/>
+                        <input autoFocus placeholder = ' ' id = "location" type="text" onChange = {handleOnChange} required/>
                         <label htmlFor="location">
                             <span>
                                 Location
@@ -30,26 +47,13 @@ function FeelingsCard({body, setBody}) {
                         </label>
                     </div>
                     
-                    <button className = 'btn white medium outline' type="submit" >
+                    <button className = 'btn btn-default' type="submit" >
                         Add location
                     </button>  
 
                 </form>
-            </div>
+            </Fragment>
         )
     }
-    
-    return (
-        <Fragment>
-            <div className="btn white circle" onClick = {handleOpenLocationField}>
-                <i class="far fa-map"></i>
-            </div>
-            <Dialog isOpen = {open}
-                title = 'Add your Places'
-                onClose = {handleCloseLocationField}
-                content = {<Content />}/>
-        </Fragment>
-    )
-}
 
-export default FeelingsCard
+export default LocationField

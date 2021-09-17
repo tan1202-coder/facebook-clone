@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 function PreviewImage({previewImage, removeFileImage}) {
     return (
-        <div className = 'preview-image'>
-            <div className = 'preview-image__img'>
+        <Fragment>
+            <div className = 'preview-image'>
                 <img src={previewImage} alt="" />
-                <div className = 'btn red circle' onClick = {removeFileImage}>
+                <div className = 'btn-icon btn-icon-exit' onClick = {removeFileImage}>
                     <i className = 'fas fa-times'></i>
                 </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

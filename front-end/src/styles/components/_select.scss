@@ -1,0 +1,11 @@
+.select {
+    padding: .25em;
+    border-radius: $border-radius-4;
+
+    &.select-primary {
+        border: none;
+        color: $primary-light-color;
+        outline: none;
+        font-family: 'fontAwesome';
+    }
+}

@@ -26,7 +26,7 @@ const UserSchema = new Schema({
         default: ''
     },
 
-    cover_img: {
+    cover_image: {
         type: String,
         default: ''
     },

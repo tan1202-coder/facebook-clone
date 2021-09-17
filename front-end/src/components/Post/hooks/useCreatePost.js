@@ -20,7 +20,7 @@ const useCreatePost = ({
 
     const createPost = async (data) => {
         setLoading(true)
-        let token = localStorage.token && JSON.parse(localStorage.getItem('token'))
+        let token = localStorage.token && JSON.parse(localStorage.token)
         try {
             const response = await axios.post(`${url}/api/post`, data, {
                 headers: {

@@ -12,9 +12,24 @@ function TagUserCard({body, setBody}) {
     
     const handleCloseTagUserCard = () => {
         setOpen(false)
-    }    
+    } 
     
-    const Content = () => {
+
+    return (
+        <Fragment>
+            <div className="btn-icon btn-icon-default" onClick = {handleOpenTagUserCard}>
+                <i className = 'fas fa-tags'></i>
+            </div>
+            <Dialog title = 'Tag your friends' onClose = {handleCloseTagUserCard} isOpen = {open} 
+                    content = {<Content body = {body}
+                                        setBody = {setBody}
+                                        setOpen = {setOpen}/>}/>
+        </Fragment>
+    )
+}
+
+
+const Content = ({body, setBody, setOpen}) => {
         const [checked, setChecked] = useState([])
 
         const {searchFriends, loading, friends} = UseSearchFriends();
@@ -33,7 +48,9 @@ function TagUserCard({body, setBody}) {
             setChecked(newChecked)
         }
 
-        const handleSubmit = () => {
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            
             setBody({...body, with: checked})
             setOpen(false)
         }
@@ -44,7 +61,7 @@ function TagUserCard({body, setBody}) {
 
 
         return (
-        <div className = 'tag-user card-cg'>
+        <Fragment>
                 <form onSubmit={handleSubmit}>
                     <div className="input-cg">
                         <input placeholder = ' ' id = "tags" type="text" onChange = {handleOnChange} required/>
@@ -55,42 +72,34 @@ function TagUserCard({body, setBody}) {
                         </label>
                     </div>
 
-                    {loading ? 
-                    <div className = 'search-friends__body'>Loading...</div> : 
-                    friends.length !== 0 && <div className = 'search-friends__body'>
-                        <ul>
-                            {friends.map(friend => (
-                                    <li key = {friend.id} onClick={handleToggle(friend.id)}>
-                                        <img src={checked.indexOf(friend.id) !== -1 ? friend.profile_pic : 'logo192.png'} alt={friend.name} className = 'avatar-cg large'/>
-                                        <div className="item-body">
-                                            <span>{friend.name}</span>
-                                            <span>{friend.email}</span>
-                                        </div>
-                                    </li>
-                            ))}
-                        </ul>
-                    </div>}
+                    <div className="card-cg">
+
+                        {loading ? 
+                        <div className = 'search-friends__body'>Loading...</div> : 
+                        friends.length !== 0 && <div className = 'search-friends__body'>
+                            <ul>
+                                {friends.map(friend => (
+                                        <li key = {friend.id} onClick={handleToggle(friend.id)}>
+                                            <img src={checked.indexOf(friend.id) !== -1 ? friend.profile_pic : 'logo192.png'} alt={friend.name} className = 'avatar-cg large'/>
+                                            <div className="item-body">
+                                                <span>{friend.name}</span>
+                                                <span>{friend.email}</span>
+                                            </div>
+                                        </li>
+                                ))}
+                            </ul>
+                        </div>}
+
+                    </div>
                     
-                    <button className = 'btn white medium outline' type="submit" >
+                    <button className = 'btn btn-default' type="submit" >
                         Tag friends
                     </button>  
 
                 </form>
-            </div>
+            </Fragment>
         )
     }
     
-    
-    
-
-    return (
-        <Fragment>
-            <div className="btn white circle" onClick = {handleOpenTagUserCard}>
-                <i className = 'fas fa-tags'></i>
-            </div>
-            <Dialog title = 'Tag your friends' onClose = {handleCloseTagUserCard} isOpen = {open} content = {<Content/>}/>
-        </Fragment>
-    )
-}
 
 export default TagUserCard

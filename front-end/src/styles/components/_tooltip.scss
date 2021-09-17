@@ -30,7 +30,7 @@
 // }
 /* Base styles for the c-tooltip's content area */
 [data-c-tooltip]:after {
-  z-index: 1000;
+  z-index: 10000000000;
   padding: 8px;
   width: max-content;
   background-color: $tooltip-default-color;

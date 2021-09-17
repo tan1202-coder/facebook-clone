@@ -69,52 +69,63 @@ function CameraField({
         setIsImageCaptured(true)
         disableCamera()
     }
+    
 
-    const Content = () => {
+    return (
+        <Fragment>
+            <div className="btn-icon btn-icon-default" onClick = {handleOpenCameraDialog}>
+                <i className = 'fas fa-camera'></i>
+            </div>
+            <Dialog title = 'Click image to capture' onClose = {handleCloseCameraDialog} isOpen = {open} 
+                content = {<Content videoRef = {videoRef} 
+                                    canvasRef = {canvasRef}
+                                    isImageCaptured = {isImageCaptured}/>}
+                footer = {<Footer isImageCaptured = {isImageCaptured}
+                                    removeCameraImage = {removeCameraImage}
+                                    addImageToPost = {addImageToPost}
+                                    handleCapture = {handleCapture}/>}/>
+        </Fragment>
+    )
+}
+
+const Content = ({videoRef, isImageCaptured, canvasRef}) => {
         return (
             <div className="camera-field">
                 <video 
                   ref={videoRef}
                   autoPlay
                   playsInline
-                  style={isImageCaptured && {display: 'none'}}
+                  style={{display: isImageCaptured && 'none', maxHeight: '400px'}}
                   /> 
 
                 <canvas 
                   ref={canvasRef}
-                  height = '425'
-                  style = {!isImageCaptured && {display: 'none'}}>
+                  height = '400px'
+                  style = {{display: !isImageCaptured &&  'none'}}>
                 </canvas>
     
-                <div className="camera-field__btn">
-                    {isImageCaptured ? (
-                        <>
-                            <div className="btn white circle" onClick = {removeCameraImage}>
-                                <i className = 'fas fa-times'></i>
-                            </div>
-                            <div className="btn white circle" onClick = {addImageToPost}>
-                                <i className = 'fas fa-check'></i>
-                            </div>
-                        </>
-                    ) : (
-                        <div className="btn secondary circle" onClick = {handleCapture}>
-                            <i className = 'fas fa-camera'></i>
-                        </div>
-                    )}
-                </div>
+                
             </div>
         )
     }
-    
 
-    return (
-        <Fragment>
-            <div className="btn white circle" onClick = {handleOpenCameraDialog}>
+const Footer = ({isImageCaptured, removeCameraImage, addImageToPost, handleCapture}) => (
+    <div className="footer-camera-field">
+        {isImageCaptured ? (
+            <>
+                <div className="btn-icon btn-icon-primary" onClick = {removeCameraImage}>
+                    <i className = 'fas fa-times'></i>
+                </div>
+                <div className="btn-icon btn-icon-primary" onClick = {addImageToPost}>
+                    <i className = 'fas fa-check'></i>
+                </div>
+            </>
+                        ) : (
+            <div className="btn-icon btn-icon-primary" onClick = {handleCapture}>
                 <i className = 'fas fa-camera'></i>
             </div>
-            <Dialog title = 'Click image to capture' onClose = {handleCloseCameraDialog} isOpen = {open} content = {<Content/>}/>
-        </Fragment>
-    )
-}
+                        )}
+    </div>
+)
 
 export default CameraField

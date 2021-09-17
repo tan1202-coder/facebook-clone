@@ -41,7 +41,7 @@ function SignupForm() {
                     </label>
                 </div>
                 
-                    <button type="submit" className='btn medium white outline'>
+                    <button type="submit" className='btn btn-default'>
                         {loading ? 'Loading...' : 'Sign up'}
                     </button>
             </form>

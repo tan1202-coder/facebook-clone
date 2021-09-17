@@ -1,7 +1,7 @@
 import React, {useState, useContext}from 'react'
 import {NavLink, Link} from 'react-router-dom'
 import {UserContext, UIContext} from '../../App'  
-import '../styles/LeftSide.scss'
+
 
 function LeftSide() {
     const {userState} = useContext(UserContext);
@@ -13,39 +13,39 @@ function LeftSide() {
     return (
         <div className = 'left-side'>
             <ul>
-                <NavLink to = {`/profile/${userState.currentUser.id}`} className = 'left-side__nav-link' onClick={() => handleClick('profile')}>
+                <NavLink to = {`/profile/${userState.currentUser.id}`} onClick={() => handleClick('profile')}>
                     <li>
-                        <i className="fas fa-user"></i>
-                        <span>Nguyễn Nhựt Tân</span>
+                        <i className="icon-cg sm fas fa-user"></i>
+                        <span>{userState.currentUser.name}</span>
                     </li>
                 </NavLink>
-                <NavLink to='/friends' className='left-side__nav-link' onClick={() => handleClick('friends')}>
+                <NavLink to='/friends' onClick={() => handleClick('friends')}>
                     <li>
-                        <i className="fas fa-user-friends"></i>
+                        <i className="icon-cg sm fas fa-user-friends"></i>
                         <span>Friends</span>
                     </li>
                 </NavLink>
-                <NavLink to='/groups' className='left-side__nav-link' onClick={() => handleClick('groups')}>
+                <NavLink to='/groups' onClick={() => handleClick('groups')}>
                     <li>
-                        <i className="fas fa-users"></i>
+                        <i className="icon-cg sm fas fa-users"></i>
                         <span>Groups</span>
                     </li>
                 </NavLink>
-                <NavLink to='/market' className='left-side__nav-link' onClick={() => handleClick('market')}>
+                <NavLink to='/market' onClick={() => handleClick('market')}>
                     <li>
-                        <i className="fas fa-store"></i>
+                        <i className="icon-cg sm fas fa-store"></i>
                         <span>Marketplace</span>
                     </li>
                 </NavLink>
-                <NavLink to='/events' className='left-side__nav-link' onClick={() => handleClick('events')}>
+                <NavLink to='/events' onClick={() => handleClick('events')}>
                     <li>
-                        <i class="fas fa-calendar-week"></i>
+                        <i class="icon-cg sm fas fa-calendar-week"></i>
                         <span>Events</span>
                     </li>
                 </NavLink>
-                <NavLink to='/memories' className='left-side__nav-link' onClick={() => handleClick('memories')}>
+                <NavLink to='/memories' onClick={() => handleClick('memories')}>
                     <li>
-                        <i className="fas fa-history"></i>
+                        <i className="icon-cg sm fas fa-history"></i>
                         <span>Memories</span>
                     </li>
                 </NavLink>

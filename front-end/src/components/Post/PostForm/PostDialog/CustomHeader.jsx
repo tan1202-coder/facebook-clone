@@ -1,12 +1,12 @@
 import React from 'react'
 
 function CustomHeader({userState, body}) {
-    const filterUserById = (user_id) => {
+    const filterUserById = (user_id) => ()  => {
         return userState.users.find((usr) => usr.id == user_id)
     }
     
     return (
-        <span>
+        <span className="custom-header">
             <b>{userState.currentUser.name}</b>
             {body.feelings ? (
                 <>

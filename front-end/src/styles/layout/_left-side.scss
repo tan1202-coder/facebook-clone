@@ -1,0 +1,22 @@
+.left-side {
+    position: fixed; 
+    left: 0;
+    top: 60px;
+    width: $header-side-width;
+    padding: .5em;
+
+    li {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+        border-radius: $border-radius-4;
+        @extend %ease;
+
+        &:hover {
+            background: $white-color-1;
+            box-shadow: $box-shadow-medium;
+        }
+    }
+}

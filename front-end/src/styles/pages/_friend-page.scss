@@ -1,0 +1,16 @@
+
+.friend-page {
+    display: flex;
+    gap: 1em;
+    padding:0 1em;
+
+    & > div {
+        width: 32%;
+        @extend %ease;
+    }
+
+    &__list {
+        display: flex;
+        gap: 0.5em;
+    }
+}

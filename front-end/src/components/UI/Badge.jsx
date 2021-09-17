@@ -6,7 +6,7 @@ function Badge({text}) {
     }
 
     return (
-        <div className = 'badge-cg'>
+        <div className = 'badge'>
             <span>
                 {text > 9 ? '9+' : text}
             </span>

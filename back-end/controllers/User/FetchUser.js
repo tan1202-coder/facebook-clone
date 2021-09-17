@@ -69,7 +69,7 @@ exports.fetchIncommingFriendRequest = async (req, res) => {
   try {
     const friends = await FriendRequest.find({
       $and: [{ isAccepted: false }, { receiver: req.userId }],
-    }).populate('sender', '_id name profile_pic active')
+    }).populate('sender')
 
     const friendsData = friends.map((friend) => {
       return {

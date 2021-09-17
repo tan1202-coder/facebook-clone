@@ -1,10 +1,13 @@
 import React, {useState, Fragment} from 'react'
 import Dialog from '../../../UI/Dialog';
+import { v4 as uuidv4 } from 'uuid';
 
 function FeelingsCard({body, setBody}) {
     const [open, setOpen] = useState(false);
+    const [fellings, setFeelings] = useState('')
 
     const handleCloseFeelingsCard = () => {
+        setBody({...body, feelings: fellings});
         setOpen(false);
     }
 
@@ -13,16 +16,30 @@ function FeelingsCard({body, setBody}) {
     }
 
     const handleOnChange = (event) => {
-        setBody({...body, feelings: event.target.value});
+        setFeelings(event.target.value);
     }
         
+    
+    return (
+        <Fragment>
+            <div className="btn-icon btn-icon-default" onClick = {handleOpenFeelingsCard}>
+                <i class="far fa-smile-wink"></i>
+            </div>
+            <Dialog isOpen = {open}
+                title = 'Express your feelings'
+                onClose = {handleCloseFeelingsCard}
+                content = {<Content handleCloseFeelingsCard = {handleCloseFeelingsCard} handleOnChange = {handleOnChange}/>}/>
+        </Fragment>
+    )
+}
 
-    const Content = () => {
+const Content = ({handleCloseFeelingsCard, handleOnChange}) => {
         return (
-            <div className = 'feelings-card'>
-                <form onSubmit={handleCloseFeelingsCard}>
+            <Fragment>
+                <form onSubmit = {handleCloseFeelingsCard}>
+
                     <div className="input-cg">
-                        <input placeholder = ' ' id = "fellings" type="text" onChange = {handleOnChange} required/>
+                        <input autoFocus placeholder = ' ' id = "fellings" type="text" onChange = {handleOnChange} required/>
                         <label htmlFor="feelings">
                             <span>
                                 Feelings
@@ -30,26 +47,13 @@ function FeelingsCard({body, setBody}) {
                         </label>
                     </div>
                     
-                    <button className = 'btn white medium outline' type="submit" >
+                    <button className = 'btn btn-default' type="submit">
                         Add feelings
                     </button>  
 
                 </form>
-            </div>
+            </Fragment>
         )
     }
-    
-    return (
-        <Fragment>
-            <div className="btn white circle" onClick = {handleOpenFeelingsCard}>
-                <i class="far fa-smile-wink"></i>
-            </div>
-            <Dialog isOpen = {open}
-                title = 'Express your feelings'
-                onClose = {handleCloseFeelingsCard}
-                content = {<Content />}/>
-        </Fragment>
-    )
-}
 
 export default FeelingsCard

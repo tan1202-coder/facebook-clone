@@ -15,7 +15,9 @@
 @import
   'layout/header',
   'layout/footer',
-  'layout/add-post-card';
+  'layout/left-side',
+  'layout/right-side',
+  'layout/grid';
 
  @import
   'components/checkbox',
@@ -29,13 +31,14 @@
   'components/dialog',
   'components/card',
   'components/form',
-  'components/tooltip';
+  'components/tooltip',
+  'components/textarea',
+  'components/select';
 
 @import
-  'pages/common',
-  'pages/signin-callback-page',
-  'pages/detail-page',
   'pages/home-page',
   'pages/not-found-page',
-  'pages/auth-page';
+  'pages/auth-page',
+  'pages/profile-page',
+  'pages/friend-page';
 

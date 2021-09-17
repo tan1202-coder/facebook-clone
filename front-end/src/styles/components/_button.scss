@@ -4,63 +4,76 @@
 */
 
 .btn {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   padding: $button-default-padding;
-  border-radius: $border-radius-4;
+  border:  2px solid;
   cursor: pointer;
   @extend %ease;
-
-//color
-
-  &.white {
+  border-radius: $border-radius-4;
     color: $primary-light-color;
-    background: $white-color-1;
+    background-color: $white-color-1;
     border-color: $primary-light-color;
 
-    &:hover, &.active {
-      border-color: $primary-light-color;
-      background: $primary-hover-color;
+    &:hover, &.is-active {
+      background-color: $primary-hover-color;
       color: $white-color-1;
       box-shadow: $box-shadow-medium;
     }
+
+  &.btn-default {
+    width: 150px;
   }
 
-  &.red {
-    color: $primary-dark-color;
-    
-    &:hover {
-      color: $danger-dark-color;
-    }
+  &.btn-small {
+    width: 100px;
   }
+}
 
-  &.secondary {
-    color: black;
+.btn-icon {
+  // padding: $button-icon-padding;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  @extend %ease;
+
+  &.btn-icon-default {
     background: $secondary-light-color;
+    color: black;
+    border: none;
 
-    &:hover, &.active {
+    &:hover, &.is-active {
       color: $primary-light-color;
       background: $secondary-dark-color;
       box-shadow: $box-shadow-medium;
     }
   }
 
-// outline
+  &.btn-icon-primary {
+    background: $white-color-1;
+    color: $primary-light-color;
+    border: 2px solid $primary-light-color;
 
-  &.outline {
-      border: 2px solid $primary-light-color;
+    &:hover, &.is-active {
+      color: $white-color-1;
+      background-color: $primary-light-color;
+    }
   }
 
-  // sizes
+  &.btn-icon-exit {
+    padding: $button-icon-padding;
+    height: auto;
+    width: auto;
+    background: transparent;
+    color: $secondary-dark-color;
 
-  &.medium {
-    width: 150px;
+    &:hover {
+      color: $danger-light-color;
+    }
   }
-
-  &.circle {
-    border-radius: $border-radius-circle;
-  }
-
 }
 
 .btn-nav {
@@ -78,7 +91,7 @@
     @extend %nav-underline;
   }
 
-  &.white-secondary {
+  &.btn-nav-default {
     color: $secondary-dark-color;
     background: $white-color-1;
 
@@ -87,13 +100,13 @@
       background: $secondary-hover-color;
       box-shadow: $box-shadow-medium;
     }
-  }
 
-  &.active {
-    color: $primary-light-color;
+    &.is-active {
+      color: $primary-light-color;
 
-    &:after {
-      @extend %nav-underline--active;
+      &:after {
+        @extend %nav-underline--active;
+      }
     }
   }
 }

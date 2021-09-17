@@ -11,7 +11,7 @@ function Auth() {
             </div>
             <div className="auth__container">
                 {isLogin ? (<LoginForm />) :<SignupForm/> }
-                <button className="btn white circle" onClick = {()=> setIsLogin(!isLogin)}>
+                <button className="btn-icon btn-icon-primary" onClick = {()=> setIsLogin(!isLogin)}>
                     <i className = {isLogin ? 'fas fa-arrow-right' : 'fas fa-arrow-left'}></i>
                 </button>
             </div>

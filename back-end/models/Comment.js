@@ -18,7 +18,15 @@ const commentSchema = new Schema({
     },
   },
 
+  responseTo: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+
   likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-})
+
+},
+{timestamps: true}
+)
 
 module.exports = model('Comment', commentSchema)

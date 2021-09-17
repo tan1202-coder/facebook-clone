@@ -129,15 +129,16 @@ $breakpoints: (
 // [margins and paddings - variables]
 // paddings
 $button-default-padding: .5em .75em;
+$button-icon-padding: .65em .75em;
 $button-nav-padding: .75em 1.75em;
 
 $input-default-padding: 0.5em;
-$input-placeholder-padding: .75em;
+$input-placeholder-padding: .5em;
 
 $label-default-padding: 1em 0.75em;
 $navlink-padding-x: 0px;
 
-$card-default-padding: .75em;
+$card-default-padding: .5em;
 
 $badge-p-padding-y: 8px;
 $badge-p-padding-x: 15px;
@@ -151,11 +152,14 @@ $box-shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.06);
 $box-shadow-medium: 0 8px 11px rgba(0, 0, 0, 0.1), 0 9px 12px rgba(0, 0, 0, 0.2);
 
 // avatar sizes 
+$avatar-s-xxsmall: 8px;
 $avatar-s-xsmall: 16px;
 $avatar-s-small: 20px;
 $avatar-s-normal: 24px;
 $avatar-s-large: 32px;
 $avatar-s-xlarge: 48px;
+$avatar-s-xxlarge: 64px;
+$avatar-s-xxxlarge: 192px;
 
 //card
 $card-h-max: 500px;

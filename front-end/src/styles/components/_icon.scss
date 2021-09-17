@@ -5,7 +5,8 @@
 
 .icon-cg {
   margin: 0;
-  margin-left: 10px;
+  margin-right: 10px;
+  color: $primary-light-color;
   
   &.xxs {
     width: 10px;
@@ -14,10 +15,11 @@
     width: 15px;
   }
   &.sm {
-    width: 25px;
+    width: 28px;
+    font-size: $font-s-large;
   }
   &.md {
-    width: 50px;
+    font-size: $font-s-xxxlarge;
   }
   img {
     width: 100%;

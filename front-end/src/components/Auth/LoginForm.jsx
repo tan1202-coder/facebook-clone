@@ -31,7 +31,7 @@ const LoginForm = () => {
                     </label>
                 </div>
                 
-                    <button className = 'btn white medium outline' type="submit" >
+                    <button className = 'btn btn-default' type="submit" >
                         {loading? 'Loading...' : 'Login'}
                     </button>                
             </form>

@@ -11,7 +11,7 @@
     position: sticky;
     top: 0;
     z-index: 9999;
-    padding: 0.5em 1em;
+    padding: .25em .5em;
     height: $header-default-height;
 
     &__wrapper {
@@ -21,24 +21,14 @@
 
         &.side {
             width: $header-side-width;
-
-            .btn {
-                font-size: $font-s-medium;
-            }
         }
-    }
-
-    &__logo {
-        color: $primary-light-color;
-        font-size: $font-s-xxxlarge;
     }
 
     &__avatar {
         display: flex;
-        justify-content: center;
         align-items: center;
-        padding: .5em;
-        border-radius: $border-radius-4;
+        padding: .25em .25em;
+        border-radius: $border-radius-5;
 
         &:hover, &.active {
             background: $secondary-hover-color;
@@ -49,7 +39,7 @@
                 color: $primary-light-color;
             }
         }
-
+        
         & > span {
             color: black;
             font-weight: $font-w-semi-bold;

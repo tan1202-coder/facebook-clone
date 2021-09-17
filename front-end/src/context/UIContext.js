@@ -4,6 +4,7 @@ export const initialUIState = {
     message: null,
     notifications: [],
     loading: false,
+    chatList: [],
 }
 
 export const UIReducer = (state, action) => {
@@ -31,6 +32,13 @@ export const UIReducer = (state, action) => {
 
         case 'ADD_NOTIFICATION':
             return { ...state, notifications: [action.payload, ...state.notifications]}
+
+        case 'ADD_CHAT':
+            return { ...state, chatList:[action.payload, ...state.chatList]}
+
+        case 'REMOVE_CHAT':
+            let list = state.filter((user) => user.id !== action.payload.id)
+            return { ...state, chatList: list}
 
         default:
             throw new Error(`action type ${action.type} not supported`)

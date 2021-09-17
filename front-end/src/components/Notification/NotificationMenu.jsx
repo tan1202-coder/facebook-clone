@@ -13,12 +13,12 @@ function NotificationMenu() {
     UseOnClickOutside(ref, () => setOpen(false));
     return (
         <div className = 'header__notification' ref={ref}>
-            <div className={Open ? 'btn secondary circle active' : 'btn secondary circle'}
+            <div className={Open ? 'btn-icon btn-icon-default is-active' : 'btn-icon btn-icon-default'}
                 onClick={() => setOpen(!Open)}
                 data-c-tooltip = 'Notifications'
                 tooltip-position = 'bottom'>
                 <i class="far fa-bell"></i>
-                <Badge text = {10}/>
+                <Badge text = {uiState.notifications.length&&uiState.notifications.length}/>
             </div>
             {Open&&<div className="card-cg">
                 {uiState.notifications.length === 0 ? 
@@ -29,8 +29,8 @@ function NotificationMenu() {
                     <ul>
                         {uiState.notifications.map((notification) => (
                         <li key = {notification.id}>
-                                <img src={notification.user.profile_pic} alt="" />
-                                <div className="noti__body">
+                                <img src={'logo192.png'} alt="" className = 'avatar-cg xlarge'/>
+                                <div className="item-body">
                                     <span>
                                         {notification.body}
                                     </span>

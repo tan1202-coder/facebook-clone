@@ -3,6 +3,11 @@
     object-fit: cover;
     object-position: center;
 
+    &.xxsmall {
+        height: $avatar-s-xxsmall;
+        width: $avatar-s-xxsmall;
+    }
+
     &.xsmall {
         height: $avatar-s-xsmall;
         width: $avatar-s-xsmall;
@@ -26,5 +31,15 @@
     &.xlarge {
         height: $avatar-s-xlarge;
         width: $avatar-s-xlarge;
+    }
+
+    &.xxlarge {
+        height: $avatar-s-xxlarge;
+        width: $avatar-s-xxlarge;
+    }
+
+    &.xxxlarge {
+        height: $avatar-s-xxxlarge;
+        width: $avatar-s-xxxlarge;
     }
 }
